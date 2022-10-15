@@ -1,5 +1,5 @@
 import React from 'react'
-import { WithRouter } from "../utils/Navigation";
+import { WithRouter } from "utils/Navigation";
 
 const Login = () => {
   return (

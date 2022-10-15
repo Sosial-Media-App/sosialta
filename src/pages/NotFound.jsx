@@ -3,7 +3,7 @@ import { WithRouter } from "utils/Navigation";
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <div className="text-xl font-semibold text-center">NotFound</div>
   )
 }
 

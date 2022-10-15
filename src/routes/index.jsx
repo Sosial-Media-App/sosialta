@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Login from "../pages/Login";
-import Register from "../pages/Register"
-import HomePage from "../pages/HomePage";
-import ProfilePage from "../pages/ProfilePage"
-import NotFound from "../pages/NotFound";
+import Login from "pages/Login";
+import Register from "pages/Register"
+import HomePage from "pages/HomePage";
+import ProfilePage from "pages/ProfilePage"
+import NotFound from "pages/NotFound";
 
 const Index = () => {
   return (

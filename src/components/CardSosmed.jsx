@@ -1,8 +1,9 @@
 import React from 'react'
+import { Box } from '@mui/material';
 
 const CardSosmed = () => {
   return (
-    <div>CardSosmed</div>
+    <Box bgcolor={'pink'} flex={5}>CardSosmed</Box>
   )
 }
 

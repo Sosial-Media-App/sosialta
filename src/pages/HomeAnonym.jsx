@@ -9,7 +9,7 @@ import { Stack, Box } from '@mui/material'
 const HomeAnonym = () => {
   return (
     <Layout>
-      <Stack direction="row" spacing={2} justifyContent="space-between">
+      <Stack direction="row" spacing={2} justifyContent="space-between" px={20}>
         <Box flex={2} bgcolor={'pink'}>
         <CardUpload></CardUpload>
         <CardSosmed></CardSosmed>

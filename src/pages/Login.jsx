@@ -1,26 +1,19 @@
 import React from "react";
 import Layout from "components/Layout";
 import { WithRouter } from "utils/Navigation";
-import Image from "assets/Rectangle51.svg";
+import Image from "assets/img.jpg";
 
 const Login = () => {
   return (
     <>
       <Layout>
         <div className="flex items-center">
-          <div className="flex-auto justify-center">
-            <img className="h-screen bg-contain" src={Image} alt="img" />
-            <div className="bg-slate-400 absolute text-center">
-              <p className="flex justify-center text-secondary font-semibold">
-                sosi
-                <p className="text-primary">alta</p>
-              </p>
-              <p>
-                Find your all friends in one place by
-                <br />
-                explore the apps quick and easily
-              </p>
-            </div>
+          <div className="flex-auto justify-center sm:bg-none md: bg-none ">
+            <img
+              className="h-screen relative bg-cover bg-center"
+              src={Image}
+              alt="img"
+            />
           </div>
           <div className="flex-auto justify-center">
             <h1 className="font-semibold text-3xl gap-y-2">Welcome Back!</h1>
@@ -51,7 +44,9 @@ const Login = () => {
                 </span>
               </label>
             </div>
-            <button className="btn bg-primary border-none w-80">Sign In</button>
+            <button className="btn normal-case hover:bg-secondary bg-primary border-none w-80">
+              Sign In
+            </button>
             <p className="flex text-base">
               Don't have an account?
               <p className="hover: text-primary pl-1">Register Here</p>

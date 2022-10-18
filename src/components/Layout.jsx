@@ -2,7 +2,7 @@ import React from 'react'
 
 const Layout = ({children}) => {
   return (
-    <div className='w-full h-screen bg-main font-main overflow-auto'>
+    <div className='w-full h-screen bg-main overflow-auto'>
       {children}
     </div>
     

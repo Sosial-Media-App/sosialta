@@ -4,6 +4,7 @@ import { WithRouter } from 'utils/Navigation'
 const ContentDetail = () => {
   return (
     <div>ContentDetail</div>
+    
   )
 }
 

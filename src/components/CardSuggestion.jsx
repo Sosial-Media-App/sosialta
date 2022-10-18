@@ -7,7 +7,10 @@ const CardSuggestion = () => {
      flex={1}
      p={2}
      sx={{display: {xs : 'none', md : 'block'}}}>
-      CardSuggestion</Box>
+      <div className='p-5 h-60 bg-white rounded-xl'>
+
+      </div>
+    </Box>
   )
 }
 

@@ -5,17 +5,15 @@ import {BiLike, BiShare} from 'react-icons/bi'
 import {FaRegCommentAlt} from 'react-icons/fa'
 
 
-
 const CardSosmed = () => {
-  
   return (
     <Box
     flex={5} 
     p={2}
     >
-      
       <div className="p-5 rounded-xl bg-white flex flex-col bg-clip-border w-full">
         <div className="flex pb-6 items-center justify-between">
+          
           <div className="flex">
             <div className="inline-block mr-4">
               <img className="rounded-full w-12 h-12" src="https://randomuser.me/api/portraits/men/35.jpg" />
@@ -29,6 +27,7 @@ const CardSosmed = () => {
               </div>
             </div>
           </div>
+
           <div>
             <div className="dropdown dropdown-end">
               <button tabIndex={0}><FiMoreHorizontal className='w-6 h-6'/></button>
@@ -59,7 +58,7 @@ const CardSosmed = () => {
              <p>Like</p>                                    
           </div>
           <div className='flex flex-row space-x-2'>
-            <button><FaRegCommentAlt className='w-6 h-6'/></button>
+            <button><FaRegCommentAlt className='w-5 h-5'/></button>
              <p>Comments</p>                                    
           </div>
           <div className='flex flex-row space-x-2'>

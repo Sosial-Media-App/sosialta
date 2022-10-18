@@ -19,11 +19,11 @@ const CardUpload = () => {
             type="text" placeholder="What's on your mind?" />
         </div>
         <div className="flex flex-row space-x-3">
-          <button className='flex flex-row rounded-lg py-2 px-3 space-x-2 bg-line'>
+          <button className='flex flex-row rounded-lg p-1 px-3 space-x-2 bg-line'>
             <AiFillPicture className='w-5 h-5'/>
             <p>Picture</p>
           </button>
-          <button className='flex flex-row rounded-lg p-2 px-3 space-x-2 bg-line'>
+          <button className='flex flex-row rounded-lg p-1 px-3 space-x-2 bg-line'>
             <MdArticle className='w-5 h-5'/>
             <p>Article</p>
           </button>

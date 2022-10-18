@@ -10,7 +10,7 @@ const HomeAnonym = () => {
   return (
     <Layout>
       <Stack direction="row" spacing={2} justifyContent="center" className="px-0 md:px-20">
-        <Box flex={2} bgcolor={'pink'}>
+        <Box flex={2}>
         <CardUpload></CardUpload>
         <CardSosmed></CardSosmed>
         </Box>

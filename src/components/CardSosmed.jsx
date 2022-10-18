@@ -1,129 +1,105 @@
 import React from 'react'
 import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import {BiShare, BiLike} from 'react-icons/bi'
-import {RiMoreFill} from 'react-icons/ri'
+import {FiMoreHorizontal} from 'react-icons/fi'
+import {BiLike, BiShare} from 'react-icons/bi'
 import {FaRegCommentAlt} from 'react-icons/fa'
 
 
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
 const CardSosmed = () => {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
+  
   return (
     <Box
     flex={5} 
-    p={2}>
-      <Card>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <RiMoreFill />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
-      </CardContent>
-      <CardMedia className='px-4'
-        component="img"
-        height="194"
-        image="https://cdf.orami.co.id/unsafe/cdn-cas.orami.co.id/parenting/images/social-butterfly-adalah.width-800.jpegquality-80.jpg"
-        alt="Paella dish"
-      />
-      <CardActions 
-      className='flex justify-between mx-3' >
-        <div className='flex items-center'>
-          <IconButton  aria-label="add to favorites">
-            <BiLike className='text-gray' /> 
-          </IconButton>
-          <p className='text-gray text-md'>Like</p>
+    p={2}
+    >
+      
+      <div className="p-6 rounded-xl bg-white flex flex-col bg-clip-border w-full">
+        <div className="flex pb-6 items-center justify-between">
+          <div className="flex">
+            <div className="inline-block mr-4">
+              <img className="rounded-full w-12 h-12" src="https://randomuser.me/api/portraits/men/35.jpg" />
+            </div>
+            <div className="flex flex-col space-y-1">
+              <div>
+                <p className="text-secondary inline-block text-base font-semibold">Wade Warren</p>
+              </div>
+              <div className="text-gray font-medium text-sm ">
+                July 17, 2018
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="dropdown dropdown-end">
+              <button tabIndex={0}><FiMoreHorizontal className='w-6 h-6'/></button>
+              <ul tabIndex={0} className="dropdown-content menu shadow-lg bg-white rounded-lg w-40">
+                <li><a className="text-secondary font-semibold">Edit</a></li>
+                <hr className='text-main' />
+                <li><a className="text-delete font-semibold">Delete</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className='flex items-center space-x-2'>
-          <FaRegCommentAlt
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-            className='text-gray'
-          > 
-            <FaRegCommentAlt /> 
-          </FaRegCommentAlt>
-          <p className='text-gray text-md'>Comment</p>
+  
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        
+        <div className="py-4">
+            <div className="flex" >
+              <img className="max-w-full rounded-lg"
+                src="https://images.pexels.com/photos/69020/pexels-photo-69020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+            </div>
         </div>
-        <div className='flex items-center'>
-          <IconButton aria-label="share">
-            <BiShare className='text-gray' /> 
-          </IconButton>
-          <p className='text-gray text-md'>Share</p>
+
+        <div className='flex flex-row justify-between items-center text-gray font-medium text'>
+          <div className='flex flex-row space-x-2'>
+            <button><BiLike className='w-6 h-6'/></button>
+             <p>Like</p>                                    
+          </div>
+          <div className='flex flex-row space-x-2'>
+            <button><FaRegCommentAlt className='w-6 h-6'/></button>
+             <p>Comments</p>                                    
+          </div>
+          <div className='flex flex-row space-x-2'>
+            <button><BiShare className='w-6 h-6'/></button>
+             <p>Share</p>                                    
+          </div>
         </div>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-            aside for 10 minutes.
-          </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-            large plate and set aside, leaving chicken and chorizo in the pan. Add
-            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-            stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is absorbed,
-            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-            mussels, tucking them down into the rice, and cook again without
-            stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
+
+        <hr className='text-main my-5' />
+        
+        <div className="relative flex flex-row">
+          <div>
+              <img className="rounded-full max-w-none w-12 h-12" src="https://randomuser.me/api/portraits/men/35.jpg" />
+            </div>
+          <input
+            className="pt-2 pb-2 pl-3 w-full border-main border rounded-full placeholder:text-slate-600 font-medium pr-20 mx-3"
+            type="text" placeholder="Write a comment" />
+            <button className='bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white '>Send</button>
+        </div>
+    
+        <div className='my-5'>
+          <div className="flex pb-4">
+            <div className="mr-4" >
+              <img className="rounded-full max-w-none w-12 h-12" src="https://randomuser.me/api/portraits/men/82.jpg" />
+            </div>
+            <div>
+              <div>
+                <p className="inline-block text-base font-bold mr-2" >Leslie Alexander</p>
+                <span className="text-slate-500">25 minutes ago</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+
+          <div className="w-full">
+            <p className="py-3 px-4 w-full block bg-slate-100 text-center rounded-lg font-medium hover:bg-slate-200">Show
+              more comments</p>
+          </div>
+        </div>
+      </div>
     </Box>
   )
 }

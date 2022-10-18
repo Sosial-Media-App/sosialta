@@ -36,7 +36,9 @@ const CardSosmed = () => {
   };
 
   return (
-    <Box bgcolor={'pink'} flex={5}>
+    <Box
+    flex={5} 
+    p={2}>
       <Card>
       <CardHeader
         avatar={
@@ -52,12 +54,6 @@ const CardSosmed = () => {
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://cdf.orami.co.id/unsafe/cdn-cas.orami.co.id/parenting/images/social-butterfly-adalah.width-800.jpegquality-80.jpg"
-        alt="Paella dish"
-      />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
@@ -65,21 +61,38 @@ const CardSosmed = () => {
           if you like.
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <BiLike />
-        </IconButton>
-        <FaRegCommentAlt
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <FaRegCommentAlt />
-        </FaRegCommentAlt>
-        <IconButton aria-label="share">
-          <BiShare />
-        </IconButton>
+      <CardMedia className='px-4'
+        component="img"
+        height="194"
+        image="https://cdf.orami.co.id/unsafe/cdn-cas.orami.co.id/parenting/images/social-butterfly-adalah.width-800.jpegquality-80.jpg"
+        alt="Paella dish"
+      />
+      <CardActions 
+      className='flex justify-between mx-3' >
+        <div className='flex items-center'>
+          <IconButton  aria-label="add to favorites">
+            <BiLike className='text-gray' /> 
+          </IconButton>
+          <p className='text-gray text-md'>Like</p>
+        </div>
+        <div className='flex items-center space-x-2'>
+          <FaRegCommentAlt
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+            className='text-gray'
+          > 
+            <FaRegCommentAlt /> 
+          </FaRegCommentAlt>
+          <p className='text-gray text-md'>Comment</p>
+        </div>
+        <div className='flex items-center'>
+          <IconButton aria-label="share">
+            <BiShare className='text-gray' /> 
+          </IconButton>
+          <p className='text-gray text-md'>Share</p>
+        </div>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

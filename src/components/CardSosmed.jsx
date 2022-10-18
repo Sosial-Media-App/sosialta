@@ -14,7 +14,7 @@ const CardSosmed = () => {
     p={2}
     >
       
-      <div className="p-6 rounded-xl bg-white flex flex-col bg-clip-border w-full">
+      <div className="p-5 rounded-xl bg-white flex flex-col bg-clip-border w-full">
         <div className="flex pb-6 items-center justify-between">
           <div className="flex">
             <div className="inline-block mr-4">
@@ -94,10 +94,10 @@ const CardSosmed = () => {
             </div>
           </div>
 
-          <div className="w-full">
+          <button className="w-full">
             <p className="py-3 px-4 w-full block bg-slate-100 text-center rounded-lg font-medium hover:bg-slate-200">Show
               more comments</p>
-          </div>
+          </button>
         </div>
       </div>
     </Box>

@@ -3,7 +3,7 @@ import { WithRouter } from "utils/Navigation";
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <div className="text-center font-semibold">Register</div>
   )
 }
 

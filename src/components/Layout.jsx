@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div className='w-full h-screen bg-main overflow-auto'>
+    <div className="w-full h-screen bg-main overflow-auto">
       {children}
     </div>
-    
-  )
-}
+  );
+};
 
 export default Layout;

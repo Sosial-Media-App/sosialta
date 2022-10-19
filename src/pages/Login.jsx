@@ -38,11 +38,10 @@ const Login = () => {
             </p>
           </form>
 
-          <button className="text-lg font-medium text-white w-full bg-primary h-14 rounded-md">
+          <button className="btn border-none normal-case hover:bg-[#F77621] text-lg font-medium text-white w-full bg-primary h-14 rounded-md">
             Sign In
           </button>
 
-          <Link to={"/login"}></Link>
           <div className="flex text-base font-normal text-center mt-8 justify-center">
             <p className="text-secondary font-normal">Don't have an account?</p>
             <Link to={"/register"}>

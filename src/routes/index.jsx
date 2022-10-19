@@ -15,7 +15,7 @@ import NotFound from "pages/NotFound";
 import HomeAnonym from "pages/HomeAnonym"
 import { TokenContext } from "utils/context";
 
-axios.defaults.baseURL = "https://virtserver.swaggerhub.com/MHMDJAUHARI/Social-Media-App/1.0.0"
+axios.defaults.baseURL = "http://3.0.183.167:3000/"
 
 
 const Index = () => {

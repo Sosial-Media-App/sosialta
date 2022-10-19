@@ -8,10 +8,10 @@ import { handleAuth } from "utils/redux/reducers/reducer";
 import Login from "pages/Login";
 import Register from "pages/Register"
 import HomePage from "pages/HomePage";
+import ContentDetail from "pages/ContentDetail";
 import ProfilePage from "pages/ProfilePage"
 import MyProfile from "pages/MyProfile"
 import NotFound from "pages/NotFound";
-import ContentDetail from "pages/ContentDetail"
 import HomeAnonym from "pages/HomeAnonym"
 import { TokenContext } from "utils/context";
 
@@ -43,12 +43,12 @@ const Index = () => {
         <Routes>
           <Route path="/" element={<HomeAnonym />} />
           <Route path="/login" element={<Login />} />
-            <Route path="/login" element={isLoggedIn? <Navigate to="/home"/> : <HomePage/> } />
+          <Route path="/login" element={isLoggedIn? <Navigate to="/home"/> : <HomePage/> } />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/detail" element={<ContentDetail />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/detail" element={<ContentDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

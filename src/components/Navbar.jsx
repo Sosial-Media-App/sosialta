@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-white px-5 md:px-14 flex justify-between mb-3 sticky top-0 z-10 shadow-sm">
       <div>
-        <Link to="/home">
+        <Link to={'/home'}>
           <a href="#Link" className="font-semibold text-2xl">
             <span className="text-secondary">sosi</span>
             <span className="text-primary">alta</span>

@@ -3,13 +3,13 @@ import { WithRouter } from "utils/Navigation";
 import { Link } from "react-router-dom";
 
 import Layout from "components/Layout";
-import Navbar from "components/Navbar";
+import NavbarAnonym from "components/NavbarAnonym";
 
 const NotFound = () => {
   return (
     <>
       <Layout>
-        <Navbar />
+        <NavbarAnonym />
         <div className="text-center">
           <h2 className="text-secondary font-bold text-5xl mt-40">
             404 - Looks like you’re lost.

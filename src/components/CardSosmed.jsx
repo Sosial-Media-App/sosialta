@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Box } from '@mui/material';
 import {FiMoreHorizontal} from 'react-icons/fi'
 import {BiLike, BiShare} from 'react-icons/bi'
@@ -19,9 +20,9 @@ const CardSosmed = () => {
               <img className="rounded-full w-12 h-12" src="https://randomuser.me/api/portraits/men/35.jpg" />
             </div>
             <div className="flex flex-col space-y-1">
-              <div>
-                <p className="text-secondary inline-block text-base font-semibold">Wade Warren</p>
-              </div>
+              <Link to="/profile">
+              <p className="text-secondary inline-block text-base font-semibold">Wade Warren</p>
+              </Link>
               <div className="text-gray font-medium text-sm ">
                 July 17, 2018
               </div>
@@ -76,7 +77,7 @@ const CardSosmed = () => {
           <input
             className="pt-2 pb-2 pl-3 w-full border-main border rounded-full placeholder:text-slate-600 font-medium pr-20 mx-3"
             type="text" placeholder="Write a comment" />
-            <button className='bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white '>Send</button>
+            <button className='btn bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white '>Send</button>
         </div>
     
         <div className='my-5'>

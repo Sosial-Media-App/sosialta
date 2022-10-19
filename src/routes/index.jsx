@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/anonym" element={<HomeAnonym />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<HomeAnonym />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />

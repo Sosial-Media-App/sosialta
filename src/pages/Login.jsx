@@ -7,35 +7,36 @@ const Login = () => {
   return (
     <>
       <Layout>
-        <div className="flex items-center">
-          <div className="flex-auto justify-center sm:bg-none md: bg-none ">
+        <div className="md:flex flex-row items-center px-2">
+          <div className="w-1/2 lg:flex justify-center hidden ">
             <img
-              className="h-screen relative bg-cover bg-center"
+              className="h-screen bg-cover bg-center"
               src={Image}
               alt="img"
             />
           </div>
-          <div className="flex-auto justify-center">
+          <div className="lg:w-1/2 lg:flex justify-center w-full px-3 mt-5">
+            <div>
             <h1 className="font-semibold text-3xl gap-y-2">Welcome Back!</h1>
             <p className="font-medium">Sign in to your account</p>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Your Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Email"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full "
               />
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
               <label className="label">
                 <span className="label-text-alt" />
@@ -51,6 +52,7 @@ const Login = () => {
               Don't have an account?
               <p className="hover: text-primary pl-1">Register Here</p>
             </p>
+          </div>
           </div>
         </div>
       </Layout>

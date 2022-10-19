@@ -8,6 +8,7 @@ import { Stack, Box } from '@mui/material'
 
 const ContentDetail = () => {
   return (
+
     <Layout>
       <Navbar></Navbar>
       <div className='w-full px-5 md:px-16 py-3'>

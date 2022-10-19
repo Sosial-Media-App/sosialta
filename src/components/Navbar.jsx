@@ -29,7 +29,6 @@ const Navbar = () => {
                 </Link>
                 <hr className='text-main' />
                 <li><a className="text-gray font-semibold">Logout</a></li>
-
             </ul>
             </div>
         </div>

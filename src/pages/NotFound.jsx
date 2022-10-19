@@ -21,7 +21,7 @@ const NotFound = () => {
             URL?
           </p>
           <Link to={"/home"}>
-            <button className="mt-11 text-xs px-14 py-3 rounded-3xl text-white font-semibold bg-primary">
+            <button className="mt-11 text-xs px-14 py-3 rounded-2xl text-white font-semibold bg-primary">
               RETURN TO HOME
             </button>
           </Link>

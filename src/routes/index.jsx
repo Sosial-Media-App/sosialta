@@ -49,7 +49,7 @@ const Index = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/detail/:id_content" element={<ContentDetail />} />
           <Route path="/profile/:username" element={<ProfilePage />} />
-          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/myprofile/:username" element={<MyProfile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

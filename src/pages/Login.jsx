@@ -18,10 +18,8 @@ const Login = () => {
   useEffect(() => {
     if (email && password) {
       setDisabled(false)
-      console.log("right")
     } else {
       setDisabled(true)
-      console.log("wrong")
     }
   }, [email,password])
 

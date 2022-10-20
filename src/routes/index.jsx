@@ -15,7 +15,7 @@ import NotFound from "pages/NotFound";
 import HomeAnonym from "pages/HomeAnonym"
 import { TokenContext } from "utils/context";
 
-axios.defaults.baseURL = "http://3.0.183.167:3000/"
+axios.defaults.baseURL = "https://virtserver.swaggerhub.com/MHMDJAUHARI/Social-Media-App/1.0.0"
 
 
 const Index = () => {
@@ -43,8 +43,9 @@ const Index = () => {
         <Routes>
           <Route path="/" element={<HomeAnonym />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/login" element={isLoggedIn? <Navigate to="/home"/> : <HomePage/> } />
+          <Route path="/login" element={isLoggedIn? <Navigate to="/home"/> : <Login/> } />
           <Route path="/register" element={<Register />} />
+          <Route path="/register" element={isLoggedIn? <Navigate to="/login"/> : <Register/> } />
           <Route path="/home" element={<HomePage />} />
           <Route path="/detail" element={<ContentDetail />} />
           <Route path="/profile" element={<ProfilePage />} />

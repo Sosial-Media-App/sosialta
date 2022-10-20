@@ -1,61 +1,99 @@
-import React from "react";
-import Layout from "components/Layout";
+import React, { useEffect,useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { handleAuth } from "utils/redux/reducers/reducer";
+import { apiRequest } from "utils/apiRequest";
 import { WithRouter } from "utils/Navigation";
-import Image from "assets/img.jpg";
+import { Link } from "react-router-dom";
+import Banner from "assets/img.jpg";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [disabled, setDisabled] = useState(true)
+
+  useEffect(() => {
+    if (email && password) {
+      setDisabled(false)
+    } else {
+      setDisabled(true)
+    }
+  }, [email,password])
+
+  const handleSubmit = async (e) => {
+    setLoading(true)
+    e.preventDefault()
+    const body = {
+      email,
+      password
+    }
+    apiRequest("login","post",body)
+      .then((res) => {
+        const { token } = res
+        localStorage.setItem("token", token)
+        dispatch(handleAuth(true))
+        alert("Login Successful")
+        navigate("/home")
+      })
+      .catch((err) => {
+        const { data } = err.response
+        alert(data.message)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
   return (
     <>
-      <Layout>
-        <div className="md:flex flex-row items-center px-2">
-          <div className="w-1/2 lg:flex justify-center hidden ">
-            <img
-              className="h-screen bg-cover bg-center"
-              src={Image}
-              alt="img"
+      <div className="md:flex flex-row items-center">
+        <img
+          className="w-1/2 lg:flex justify-center hidden"
+          src={Banner}
+          alt="Banner"
+        />
+        <div className="flex flex-col w-full p-4 sm:w-1/2 lg:ml-16 md:ml-36 sm:pt-44 lg:pr-44" onSubmit={(e) => handleSubmit(e)}>
+          <h1 className="text-5xl font-semibold text-center sm:text-left text-secondary mb-8 ">
+            Welcome Back!
+          </h1>
+          <h5 className="text-xl font-medium mb-6 ">Sign in to your account</h5>
+          <form className="flex flex-col w-full">
+            <label className="text-lg font-medium mb-3">Your email</label>
+            <input
+              className="h-14 border-2 input input-bordered form-control w-full border-[#F0F4FD] rounded-md pl-3 mb-6"
+              type="email"
+              placeholder="Email adress"
+              onChange={(e)=> setEmail(e.target.value)}
             />
-          </div>
-          <div className="lg:w-1/2 lg:flex justify-center w-full px-3 mt-5">
-            <div>
-            <h1 className="font-semibold text-3xl gap-y-2">Welcome Back!</h1>
-            <p className="font-medium">Sign in to your account</p>
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Your Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Email"
-                className="input input-bordered w-full "
-              />
-            </div>
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Password"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text-alt" />
-                <span className="label-text-alt text-primary font-medium">
-                  Reset Password
-                </span>
-              </label>
-            </div>
-            <button className="btn normal-case hover:bg-secondary bg-primary border-none w-80">
-              Sign In
-            </button>
-            <p className="flex text-base">
-              Don't have an account?
-              <p className="hover: text-primary pl-1">Register Here</p>
+
+            <label className="text-lg font-medium mb-3">Password</label>
+            <input
+              className="w-full h-14 border-2 input input-bordered border-[#F0F4FD] rounded-md pl-3 mb-4"
+              placeholder="Password"
+              type="password"
+              onChange={(e)=> setPassword(e.target.value)}
+            />
+
+            <p className="text-lg text-primary text-right mb-10">
+              Reset Password
             </p>
-          </div>
+          </form>
+
+          <button className="btn border-none normal-case hover:bg-[#F77621] text-lg font-medium text-white w-full bg-primary h-14 rounded-md" loading={loading || disabled} onClick={(e) => handleSubmit(e)}>
+            Sign In
+          </button>
+
+          <div className="flex text-base font-normal text-center mt-8 justify-center">
+            <p className="text-secondary font-normal">Don't have an account?</p>
+            <Link to={"/register"}>
+              <p className=" text-primary pl-1">Register Here</p>
+            </Link>
           </div>
         </div>
-      </Layout>
+      </div>
     </>
   );
 };

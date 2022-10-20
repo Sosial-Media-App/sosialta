@@ -8,7 +8,7 @@ import Navbar from "components/Navbar";
 import Sampul from "assets/bg-sampul-profile.svg";
 import Profile from "assets/profile.png";
 
-const MyProfile = () => {
+const ProfilePage = () => {
   return (
     <Layout>
       <Navbar />
@@ -42,4 +42,4 @@ const MyProfile = () => {
   );
 };
 
-export default WithRouter(MyProfile);
+export default WithRouter(ProfilePage);

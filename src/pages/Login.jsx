@@ -35,7 +35,6 @@ const Login = () => {
         const { token } = res.data
         localStorage.setItem("token", token)
         dispatch(handleAuth(true))
-        alert("Login Successful")
         navigate("/home")
 
       })

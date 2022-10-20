@@ -26,8 +26,8 @@ const Register = () => {
     setLoading(true);
     e.preventDefault();
     const body = {
-      full_name: fullName,
-      user_name: userName,
+      fullname: fullName,
+      username: userName,
       email,
       password,
     };

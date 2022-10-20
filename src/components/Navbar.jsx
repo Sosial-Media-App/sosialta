@@ -1,34 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { AiFillHome } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
+import Profile from "assets/nav-profile.jpg";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-white px-5 md:px-14 flex justify-between sticky top-0 z-10 shadow-sm">
+    <div className="navbar bg-white px-24 py-3 flex justify-between sticky top-0 z-10 shadow-sm">
       <div>
-        <Link to={'/home'}>
+        <Link to={"/home"}>
           <a href="#Link" className="font-semibold text-2xl">
             <span className="text-secondary">sosi</span>
             <span className="text-primary">alta</span>
           </a>
         </Link>
       </div>
-      <div className="form-control">
-        
+      <div className="flex mt-form-control">
+        <button className="py-3.5 pl-3 pr-2 border-y-2 border-l-2 border-none bg-main rounded-l-lg ">
+          <FiSearch className="text-xl text-[#999999]" />
+        </button>
         <input
           type="text"
-          placeholder="Search"
-          className="bg-main rounded-lg p-2 hidden md:block"
+          placeholder="Cari"
+          className="bg-main input rounded-l-none rounded-lg hidden md:block"
         />
       </div>
-      <div className="flex-none gap-2">
+      <div className="gap-2">
         <Link to="/home">
-          <AiFillHome className="w-6 h-6" />
+          <AiFillHome className="w-8 h-8 mr-4" />
         </Link>
         <div className="dropdown dropdown-end">
           <button tabIndex={0} className="avatar">
-            <div className="w-6 rounded-full">
-              <img alt="Gambar" src="https://randomuser.me/api/portraits/men/35.jpg" />
+            <div className="w-8 rounded-full mt-2">
+              <img alt="Gambar" src={Profile} />
             </div>
           </button>
           <ul
@@ -37,12 +42,22 @@ const Navbar = () => {
           >
             <Link to="/profile">
               <li>
-                <a href="#Gambar" className="text-secondary font-semibold">Profile</a>
+                <a
+                  href="#Gambar"
+                  className="text-secondary font-medium active:bg-[#FDE1CE]"
+                >
+                  Profile
+                </a>
               </li>
             </Link>
             <hr className="text-main" />
             <li>
-              <a href="Gambar" className="text-gray font-semibold">Logout</a>
+              <a
+                href="Gambar"
+                className="text-gray font-medium active:bg-[#FFEBEB]"
+              >
+                Logout
+              </a>
             </li>
           </ul>
         </div>

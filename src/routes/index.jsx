@@ -31,7 +31,7 @@ const Index = () => {
   if (getToken) {
     dispatch(handleAuth(true))
   } else {
-    dispatch(handleAuth)
+    dispatch(handleAuth(false))
   }
   axios.defaults.headers.common["Authorization"] = getToken? `Bearer ${getToken}` : ""
  }, [isLoggedIn])   

@@ -4,7 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-white px-5 md:px-14 flex justify-between mb-3 sticky top-0 z-10 shadow-sm">
+    <div className="navbar bg-white px-5 md:px-14 flex justify-between sticky top-0 z-10 shadow-sm">
       <div>
         <Link to={'/home'}>
           <a href="#Link" className="font-semibold text-2xl">
@@ -14,6 +14,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="form-control">
+        
         <input
           type="text"
           placeholder="Search"

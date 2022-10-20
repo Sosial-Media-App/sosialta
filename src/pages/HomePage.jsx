@@ -78,6 +78,7 @@ const HomePage = (props) => {
           story={data.story_detail}
           storyPicture={data.story_picture}
           onNavigate={()=> navigate(`/profile/${data.id_user}`)}
+          onDetail={() => navigate(`/detail`)}
           />
           ))}
         </Box>

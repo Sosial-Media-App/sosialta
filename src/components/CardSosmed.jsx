@@ -57,7 +57,7 @@ const CardSosmed = (props) => {
         </p>
 
         <div className="py-4">
-          <div className="flex">
+          <div className="flex" onClick={props.onDetail}>
             <img
               className="max-w-full rounded-lg"
               src={props.storyPicture}

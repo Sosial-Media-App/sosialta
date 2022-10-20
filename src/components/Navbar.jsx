@@ -40,16 +40,16 @@ const Navbar = (props) => {
             tabIndex={0}
             className="dropdown-content menu shadow-lg bg-white rounded-lg w-40"
           >
-            <Link to="/profile">
-              <li>
-                <a
-                  href="#Gambar"
-                  className="text-secondary font-medium active:bg-[#FDE1CE]"
-                >
-                  Profile
-                </a>
-              </li>
-            </Link>
+            <li>
+              <button
+                onClick={props.onProfile}
+                href="#Gambar"
+                className="text-secondary font-medium active:bg-[#FDE1CE]"
+              >
+                Profile
+              </button>
+            </li>
+
             <hr className="text-main" />
             <li>
               <button

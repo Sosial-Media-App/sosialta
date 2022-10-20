@@ -49,6 +49,21 @@ const HomePage = (props) => {
     })
   }
 
+  const handleProfile = async () => {
+    apiRequest("users", "get", {})
+      .then((res) => {
+        const detail = res.data.id;
+        setUserName(detail);
+        navigate(`/myprofile/${detail}`);
+      })
+      .catch((err) => {
+        alert(err.tooString());
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -80,6 +95,7 @@ const HomePage = (props) => {
     <Layout>
       <Navbar
         onNavigate={() => handleLogout()}
+        onProfile={() => handleProfile()}
       />
       <Stack
         direction="row"

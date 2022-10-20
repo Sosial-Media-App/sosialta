@@ -31,7 +31,7 @@ const Index = () => {
   if (getToken) {
     dispatch(handleAuth(true))
   } else {
-    dispatch(handleAuth)
+    dispatch(handleAuth(false))
   }
   axios.defaults.headers.common["Authorization"] = getToken? `Bearer ${getToken}` : ""
  }, [isLoggedIn])   
@@ -48,7 +48,7 @@ const Index = () => {
           <Route path="/register" element={isLoggedIn? <Navigate to="/login"/> : <Register/> } />
           <Route path="/home" element={<HomePage />} />
           <Route path="/detail" element={<ContentDetail />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/:username" element={<ProfilePage />} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

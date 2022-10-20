@@ -33,21 +33,18 @@ const Register = () => {
     }
     apiRequest("users","post", body)
     .then((res) => {
-      const {message, data} = res.data
+      const {message, data} = res
       if (data) {
         navigate("/home")
-        console.log("berhasil")
       }
       alert(message)
-      console.log("gagal")
     })
     .catch((err) => {
       const {message} = err.response.data
-      alert(message)
+      alert(message);
     })
     .finally(() => {
       setLoading(false)
-      console.log("hiyak")
     })
   }
 

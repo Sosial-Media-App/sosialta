@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {useState, useEffect} from "react"
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { BiLike, BiShare } from "react-icons/bi";
 import { FaRegCommentAlt } from "react-icons/fa";
 
-const CardSosmed = () => {
+const CardSosmed = (props) => {
+  const navigate = useNavigate()
+
   return (
     <Box flex={5} p={2}>
       <div className="p-5 rounded-xl bg-white flex flex-col bg-clip-border w-full">
@@ -19,11 +22,9 @@ const CardSosmed = () => {
               />
             </div>
             <div className="flex flex-col space-y-1">
-              <Link to="/profile">
-                <p className="text-secondary inline-block text-base font-semibold">
-                  Wade Warren
+                <p className="text-secondary inline-block text-base font-semibold" onClick={props.onNavigate}>
+                  {props.userName}
                 </p>
-              </Link>
               <div className="text-gray font-medium text-sm ">
                 July 17, 2018
               </div>
@@ -52,15 +53,14 @@ const CardSosmed = () => {
         </div>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {props.story}
         </p>
 
         <div className="py-4">
           <div className="flex">
             <img
               className="max-w-full rounded-lg"
-              src="https://images.pexels.com/photos/69020/pexels-photo-69020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              src={"https://images.pexels.com/photos/69020/pexels-photo-69020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
               alt="Gambar"
             />
           </div>
@@ -119,11 +119,11 @@ const CardSosmed = () => {
             <div>
               <div>
                 <p className="inline-block text-base font-bold mr-2">
-                  Leslie Alexander
+                  Coba{props.commentUser}
                 </p>
                 <span className="text-slate-500">25 minutes ago</span>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur{props.commentContain}</p>
             </div>
           </div>
 

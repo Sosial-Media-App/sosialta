@@ -6,7 +6,7 @@ import Image from "assets/profile.jpg";
 const CardSuggestion = () => {
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", md: "block" } }}>
-      <div className="p-5 bg-white rounded-xl">
+      <div className="p-5 bg-white rounded-xl fixed">
         <h2 className="text-secondary font-semibold text-base">
           Suggesions for you
         </h2>

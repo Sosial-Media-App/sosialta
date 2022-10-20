@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { WithRouter } from "utils/Navigation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { handleAuth } from "utils/redux/reducers/reducer";
 import { apiRequest } from "utils/apiRequest";
 
 import Layout from "components/Layout";
@@ -10,28 +9,28 @@ import CardSosmed from "components/CardSosmed";
 import { Stack, Box } from "@mui/material";
 import Navbar from "components/Navbar";
 import Sampul from "assets/bg-sampul-profile.svg";
-import Profile from "assets/profile.png";
 import CardEditProfile from "components/CardEditProfile";
-import { data } from "autoprefixer";
 
 const MyProfile = (props) => {
-  // const { username } = props.params;
+  const { username } = props.params;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [datas, setDatas] = useState([]);
-  const [username, setUserName] = useState("");
+  // const [username, setUserName] = useState("");
   const [fullname, setFullName] = useState("");
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
+    handleData();
   }, []);
 
   const fetchData = async () => {
     apiRequest(`/users/${username}`, "get", {})
       .then((res) => {
         const results = res.data;
+        setDatas(results)
         console.log(results);
         // setDatas(results)
         // setPage(newPage)
@@ -44,6 +43,20 @@ const MyProfile = (props) => {
         setLoading(false);
       });
   };
+
+  const handleData = async () => {
+    apiRequest(`contents`, "get", {})
+    .then((res) => {
+      const  results  = res.data
+      setDatas(results)
+    })
+    .catch((err) => {
+      alert(err.toString());
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -84,8 +97,15 @@ const MyProfile = (props) => {
           className="px-0 md:px-20"
         >
           <Box flex={2}>
-            <CardSosmed />
-            <CardSosmed />
+          {datas.map((data) => (
+          <CardSosmed
+          key={data.id}
+          username={data.username}
+          story={data.story_detail}
+          storyPicture={data.story_picture}
+          />
+          ))}
+
           </Box>
           <CardEditProfile />
         </Stack>

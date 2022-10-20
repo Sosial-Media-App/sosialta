@@ -32,7 +32,7 @@ const Login = () => {
     }
     apiRequest("login","post",body)
       .then((res) => {
-        const { token } = res
+        const { token } = res.data
         localStorage.setItem("token", token)
         dispatch(handleAuth(true))
         alert("Login Successful")

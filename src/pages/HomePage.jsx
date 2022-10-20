@@ -54,6 +54,25 @@ const HomePage = (props) => {
     navigate("/login");
   };
 
+  const savePost = async (e) => {
+    e.preventDefault()
+    const body = {
+      story
+    }
+    apiRequest("contents","post",body)
+    .then((res) => {
+      const { results } = res.data
+      fetchData()
+    })
+    .catch((err) => {
+      const {data} = err.response
+      alert(data.message)
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }
+
   if (loading) {
     return <div>Loading...</div>
   }
@@ -70,11 +89,18 @@ const HomePage = (props) => {
         className="px-0 md:px-20"
       >
         <Box flex={2}>
-          <CardUpload/> 
+          <CardUpload
+          onClick={()=>savePost()}
+          onSubmit={()=>savePost()}
+          value={story}
+          onChange={(e)=>setStory(e.target.value)}
+          
+          /> 
+
           {datas.map((data) => (
           <CardSosmed
           key={data.id}
-          idUser={data.id_user}
+          username={data.username}
           story={data.story_detail}
           storyPicture={data.story_picture}
           onNavigate={()=> navigate(`/profile/${data.id_user}`)}

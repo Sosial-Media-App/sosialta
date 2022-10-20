@@ -22,8 +22,10 @@ const MyProfile = () => {
             <img src={Profile} alt="profile" />
           </div>
           <div className="ml-6 mt-4">
-            <h2 className="font-semibold text-2xl mb-1">Jordyn Saris</h2>
-            <p className="font-medium text-base">@jordynsaris</p>
+            <h2 className="font-semibold text-2xl text-secondary mb-1">
+              Jordyn Saris
+            </h2>
+            <p className="font-medium text-base text-secondary">@jordynsaris</p>
           </div>
         </div>
         <hr className="mx-24 my-6 text-[#D9D9D9]" />

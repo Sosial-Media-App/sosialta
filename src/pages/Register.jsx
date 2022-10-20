@@ -12,41 +12,41 @@ const Register = () => {
   const [fullName, setFullName] = useState("");
   const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(false);
-  const [disabled, setDisabled] = useState(true)
+  const [disabled, setDisabled] = useState(true);
 
-  useEffect(()=> {
+  useEffect(() => {
     if (email && password && userName && fullName) {
-      setDisabled(false) 
+      setDisabled(false);
     } else {
-      setDisabled(true)
+      setDisabled(true);
     }
-  }, [email, password, userName, fullName])
+  }, [email, password, userName, fullName]);
 
   const handleSubmit = async (e) => {
-    setLoading(true)
-    e.preventDefault()
+    setLoading(true);
+    e.preventDefault();
     const body = {
       full_name: fullName,
       user_name: userName,
       email,
       password,
-    }
-    apiRequest("users","post", body)
-    .then((res) => {
-      const {message, data} = res
-      if (data) {
-        navigate("/home")
-      }
-      alert(message)
-    })
-    .catch((err) => {
-      const {message} = err.response.data
-      alert(message);
-    })
-    .finally(() => {
-      setLoading(false)
-    })
-  }
+    };
+    apiRequest("users", "post", body)
+      .then((res) => {
+        const { message, data } = res;
+        if (data) {
+          navigate("/login");
+        }
+        alert(message);
+      })
+      .catch((err) => {
+        const { message } = err.response.data;
+        alert(message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   return (
     <>
@@ -56,7 +56,10 @@ const Register = () => {
           src={Banner}
           alt="Banner"
         />
-        <div className="flex flex-col w-full p-4 sm:w-1/2 lg:ml-16 md:ml-36 sm:pt-44 lg:pr-44" onSubmit={(e)=> handleSubmit(e)}>
+        <div
+          className="flex flex-col w-full p-4 sm:w-1/2 lg:ml-16 md:ml-36 sm:pt-44 lg:pr-44"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <h1 className="text-5xl font-semibold text-center sm:text-left text-secondary mb-8 ">
             Registration
           </h1>
@@ -72,7 +75,7 @@ const Register = () => {
               className="h-14 border-2 input input-bordered form-control w-full border-[#F0F4FD] rounded-md pl-3 mb-6"
               type="text"
               placeholder="Fullname"
-              onChange={(e)=> setFullName(e.target.value)}
+              onChange={(e) => setFullName(e.target.value)}
             />
 
             <label className="text-lg font-medium mb-3">Username</label>
@@ -80,7 +83,7 @@ const Register = () => {
               className="h-14 border-2 input input-bordered form-control w-full border-[#F0F4FD] rounded-md pl-3 mb-6"
               type="text"
               placeholder="Username"
-              onChange={(e)=> setUserName(e.target.value)}
+              onChange={(e) => setUserName(e.target.value)}
             />
 
             <label className="text-lg font-medium mb-3">Your email</label>
@@ -88,7 +91,7 @@ const Register = () => {
               className="h-14 border-2 input input-bordered form-control w-full border-[#F0F4FD] rounded-md pl-3 mb-6"
               type="email"
               placeholder="Email adress"
-              onChange={(e)=> setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <label className="text-lg font-medium mb-3">Password</label>
@@ -96,7 +99,7 @@ const Register = () => {
               className="w-full h-14 border-2 input input-bordered border-[#F0F4FD] rounded-md pl-3 mb-4"
               placeholder="Password"
               type="password"
-              onChange={(e)=> setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
             <p className="text-lg text-primary text-right mb-10">
@@ -104,7 +107,11 @@ const Register = () => {
             </p>
           </form>
 
-          <button className="btn border-none normal-case hover:bg-[#F77621] text-lg font-medium text-white w-full bg-primary h-14 rounded-md" onClick={(e)=> handleSubmit(e)} loading={loading || disabled}>
+          <button
+            className="btn border-none normal-case hover:bg-[#F77621] text-lg font-medium text-white w-full bg-primary h-14 rounded-md"
+            onClick={(e) => handleSubmit(e)}
+            loading={loading || disabled}
+          >
             Create Account
           </button>
 

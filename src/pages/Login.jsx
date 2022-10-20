@@ -32,10 +32,12 @@ const Login = () => {
     };
     apiRequest("login", "post", body)
       .then((res) => {
-        const { token } = res;
-        localStorage.setItem("token", token);
-        dispatch(handleAuth(true));
-        navigate("/home");
+        const { token } = res.data
+        localStorage.setItem("token", token)
+        dispatch(handleAuth(true))
+        alert("Login Successful")
+        navigate("/home")
+
       })
       .catch((err) => {
         const { data } = err.response;

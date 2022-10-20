@@ -49,13 +49,20 @@ const HomePage = (props) => {
     })
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   if (loading) {
     return <div>Loading...</div>
   }
   
   return (
     <Layout>
-      <Navbar></Navbar>
+      <Navbar
+        onNavigate={() => handleLogout()}
+      />
       <Stack
         direction="row"
         spacing={2}

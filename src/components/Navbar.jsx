@@ -5,7 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import Profile from "assets/nav-profile.jpg";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="navbar bg-white px-24 py-3 flex justify-between sticky top-0 z-10 shadow-sm">
       <div>
@@ -52,12 +52,13 @@ const Navbar = () => {
             </Link>
             <hr className="text-main" />
             <li>
-              <a
+              <button
+                onClick={props.onNavigate}
                 href="Gambar"
                 className="text-gray font-medium active:bg-[#FFEBEB]"
               >
                 Logout
-              </a>
+              </button>
             </li>
           </ul>
         </div>

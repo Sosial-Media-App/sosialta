@@ -23,7 +23,7 @@ const CardSosmed = (props) => {
             </div>
             <div className="flex flex-col space-y-1">
                 <p className="text-secondary inline-block text-base font-semibold" onClick={props.onNavigate}>
-                  {props.userName}
+                  {props.idUser}
                 </p>
               <div className="text-gray font-medium text-sm ">
                 July 17, 2018
@@ -60,8 +60,7 @@ const CardSosmed = (props) => {
           <div className="flex">
             <img
               className="max-w-full rounded-lg"
-              src={"https://images.pexels.com/photos/69020/pexels-photo-69020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
-              alt="Gambar"
+              src={props.storyPicture}
             />
           </div>
         </div>

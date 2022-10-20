@@ -67,12 +67,10 @@ const HomePage = (props) => {
           {datas.map((data) => (
           <CardSosmed
           key={data.id}
-          userName={data.username}
+          idUser={data.id_user}
           story={data.story_detail}
           storyPicture={data.story_picture}
-          commentUser={data.comment.username}
-          commentContain={data.comment.comment}
-          onNavigate={()=> navigate(`/profile/${data.username}`)}
+          onNavigate={()=> navigate(`/profile/${data.id_user}`)}
           />
           ))}
         </Box>

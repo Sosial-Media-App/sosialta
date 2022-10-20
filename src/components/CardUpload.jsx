@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import { AiFillPicture } from "react-icons/ai";
 import { MdArticle } from "react-icons/md";
 
-const CardUpload = () => {
+const CardUpload = (props) => {
   return (
     <Box flex={4} p={2}>
       <div className="p-5 bg-white rounded-xl">
@@ -21,6 +21,11 @@ const CardUpload = () => {
             type="text"
             placeholder="What's on your mind?"
           />
+          <button className="btn bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white " 
+          onClick={props.onClick}
+          >
+            Post
+          </button>
         </div>
         <div className="flex flex-row space-x-3">
           <button className="flex flex-row rounded-lg p-1 px-3 space-x-2 bg-line">

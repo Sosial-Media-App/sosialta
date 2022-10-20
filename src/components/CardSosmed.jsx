@@ -22,8 +22,8 @@ const CardSosmed = (props) => {
               />
             </div>
             <div className="flex flex-col space-y-1">
-                <p className="text-secondary inline-block text-base font-semibold" onClick={props.onNavigate}>
-                  {props.idUser}
+                <p className="text-secondary inline-block text-base font-semibold hover:cursor-pointer" onClick={props.onNavigate}>
+                  {props.username}
                 </p>
               <div className="text-gray font-medium text-sm ">
                 July 17, 2018

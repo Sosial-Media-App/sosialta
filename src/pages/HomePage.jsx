@@ -55,7 +55,6 @@ const HomePage = (props) => {
   };
 
   const savePost = async (e) => {
-    e.preventDefault()
     const body = {
       story
     }
@@ -103,8 +102,8 @@ const HomePage = (props) => {
           username={data.username}
           story={data.story_detail}
           storyPicture={data.story_picture}
-          onNavigate={()=> navigate(`/profile/${data.id_user}`)}
-          onDetail={() => navigate(`/detail`)}
+          onNavigate={()=> navigate(`/profile/${data.username}`)}
+          onDetail={() => navigate(`/detail/${data.id}`)}
           />
           ))}
         </Box>

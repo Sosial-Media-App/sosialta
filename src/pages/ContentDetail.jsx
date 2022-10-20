@@ -10,8 +10,8 @@ import CardSuggestion from "components/CardSuggestion";
 import { Stack, Box } from "@mui/material";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
-const ContentDetail = () => {
-  const [datas, setDatas] = useState([]);
+const ContentDetail = (props) => {
+  const [data, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,13 +19,15 @@ const ContentDetail = () => {
   }, []);
 
   const fetchData = async () => {
-    apiRequest("contents", "get", {})
+    const {id_content} = props.params
+    apiRequest(`contents/${id_content}`, "get", {})
       .then((res) => {
-        const results = res.data;
-        setDatas(results);
+        const results = res.data
+        setDatas(results)
+        console.log(results)
       })
       .catch((err) => {
-        alert(err.tooString());
+        alert(err.toString());
       })
       .finally(() => {
         setLoading(false);
@@ -54,14 +56,14 @@ const ContentDetail = () => {
         className="px-0 md:px-20"
       >
         <Box flex={2}>
-          {datas.map((data) => (
+          
             <CardSosmed
               key={data.id}
-              idUser={data.id_user}
+              username={data.username}
               story={data.story_detail}
               storyPicture={data.story_picture}
             />
-          ))}
+        
         </Box>
         <CardSuggestion />
       </Stack>

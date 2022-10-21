@@ -58,7 +58,7 @@ const HomeAnonym = (props) => {
             <div className="modal-box relative flex flex-col justify-center text-center">
               <label
                 htmlFor="my-modal-3"
-                className="btn btn-sm btn-circle absolute right-2 top-2"
+                className="btn btn-sm bg-white text-[#D9D9D9]  hover:bg-[#FDE1CE] border-none text-xl btn-circle absolute right-2 top-2"
               >
                 ✕
               </label>
@@ -70,12 +70,12 @@ const HomeAnonym = (props) => {
                 each other
               </p>
               <Link to="/login">
-                <button className="btn normal-case hover:bg-secondary bg-primary rounded-full w-full my-2">
+                <button className="btn normal-case hover:bg-[#ffa971] border-none bg-primary rounded-full w-full my-2">
                   Log In
                 </button>
               </Link>
               <Link to="/register">
-                <button className="btn normal-case text-primary hover:bg-secondary bg-white border-gray rounded-full w-full my-2">
+                <button className="btn normal-case text-primary hover:bg-[#FDE1CE] border-[#D9D9D9] bg-white rounded-full w-full my-2">
                   Sign Up
                 </button>
               </Link>

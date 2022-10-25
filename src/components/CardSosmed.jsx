@@ -118,12 +118,12 @@ const CardSosmed = (props) => {
             </div>
             <div>
               <div>
-                <p className="inline-block text-base font-semibold mr-2">
-                  Jauhari {props.commentUser}
+                <p className="inline-block text-base font-bold mr-2">
+                  {props.Username}
                 </p>
                 <span className="text-slate-500">25 minutes ago</span>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur {props.commentContain}</p>
+              <p>{props.Comment}</p>
             </div>
           </div>
 

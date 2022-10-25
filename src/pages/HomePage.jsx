@@ -33,7 +33,8 @@ const HomePage = (props) => {
     .then((res) => {
       const  results  = res.data
       setDatas(results)
-      // setPage(newPage)
+      console.log(results)
+
     })
     .catch((err) => {
       const { data } = err.response;
@@ -105,6 +106,7 @@ const HomePage = (props) => {
           storyPicture={data.story_picture}
           onNavigate={()=> navigate(`/profile/${data.username}`)}
           onDetail={() => navigate(`/detail/${data.id}`)}
+          Username={data.DetailCore?.Username}
           />
           ))}
         </Box>

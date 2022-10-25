@@ -56,14 +56,27 @@ const ContentDetail = (props) => {
         className="px-0 md:px-20"
       >
         <Box flex={2}>
-          
+
             <CardSosmed
-              key={data.id}
-              username={data.username}
-              story={data.story_detail}
-              storyPicture={data.story_picture}
-            />
-        
+            key={data?.id}
+            username={data?.username}
+            story={data?.story_detail}
+            storyPicture={data?.story_picture}
+            
+          />
+          
+            {data.DetailCore?.map((item , index) => (
+            <CardSosmed
+            key={data?.id}
+            username={data?.username}
+            story={data?.story_detail}
+            storyPicture={data?.story_picture}
+            keyid={item.IdContent}
+            Username={item.Username}
+            keyUser={item.IdUser}
+            Comment={item.Comment}
+          />
+          ))}
         </Box>
         <CardSuggestion />
       </Stack>

@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { WithRouter } from "utils/Navigation";
+import { apiRequest } from "utils/apiRequest";
+
 import Layout from "components/Layout";
 import CardSosmed from "components/CardSosmed";
 import CardSuggestion from "components/CardSuggestion";
@@ -8,7 +10,33 @@ import Navbar from "components/Navbar";
 import Sampul from "assets/bg-sampul-profile.svg";
 import Profile from "assets/profile.png";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
+  const [data, setDatas] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    const {username} = props.params
+    apiRequest(`/users/${username}`,"get")
+    .then((res) => {
+      const results = res.data
+      setDatas(results)
+      console.log(results)
+
+
+    })
+    .catch((err) => {
+      alert(err.toString())
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }
+
+
   return (
     <Layout>
       <Navbar />
@@ -22,9 +50,9 @@ const ProfilePage = () => {
           </div>
           <div className="ml-6 mt-4">
             <h2 className="font-semibold text-2xl text-secondary mb-1">
-              Jordyn Saris
+              {data.username}
             </h2>
-            <p className="font-medium text-base text-secondary">@jordynsaris</p>
+            <p className="font-medium text-base text-secondary">{data.email}</p>
           </div>
         </div>
         <hr className="mx-24 my-6 text-[#D9D9D9]" />
@@ -44,9 +72,17 @@ const ProfilePage = () => {
           justifyContent="center"
           className="px-0 md:px-20"
         >
-          <Box flex={2}>
-            <CardSosmed />
-            <CardSosmed />
+          <Box flex={2}> 
+            {data.DetailCore?.map((item, index) =>(
+              <CardSosmed
+              key={item.ID}
+              story={item.StoryDetail}
+              storyPicture={item.StoryPicture}
+              username={data.username}
+              />
+            ))}
+          
+            
           </Box>
           <CardSuggestion />
         </Stack>

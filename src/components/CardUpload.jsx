@@ -21,7 +21,7 @@ const CardUpload = (props) => {
             type="text"
             placeholder="What's on your mind?"
           />
-          <button className="btn bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white " 
+          <button className="btn bg-primary rounded-full py-2 border-none hover:bg-[#F8863A] px-10 font-medium font-semi-bold text-white " 
           onClick={props.onClick}
           >
             Post
@@ -29,7 +29,7 @@ const CardUpload = (props) => {
         </div>
         <div className="flex flex-row space-x-3">
           <button className="flex flex-row rounded-lg p-1 px-3 space-x-2 bg-line">
-            <AiFillPicture className="w-5 h-5" />
+            <AiFillPicture className="h-6 w-5" />
             <p>Picture</p>
           </button>
           <button className="flex flex-row rounded-lg p-1 px-3 space-x-2 bg-line">

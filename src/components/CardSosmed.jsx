@@ -26,7 +26,7 @@ const CardSosmed = (props) => {
                   {props.username}
                 </p>
               <div className="text-gray font-medium text-sm ">
-                July 17, 2018
+                July 17, 2022
               </div>
             </div>
           </div>
@@ -41,11 +41,11 @@ const CardSosmed = (props) => {
                 className="dropdown-content menu shadow-lg bg-white rounded-lg w-40"
               >
                 <li>
-                  <a href="#link" className="text-secondary font-semibold">Edit</a>
+                  <a href="#link" className="text-secondary font-medium active:bg-[#FDE1CE]">Edit</a>
                 </li>
                 <hr className="text-main" />
                 <li>
-                  <a href="#link" className="text-delete font-semibold">Delete</a>
+                  <a href="#link" className="text-delete font-medium active:bg-[#FFEBEB]">Delete</a>
                 </li>
               </ul>
             </div>
@@ -61,6 +61,7 @@ const CardSosmed = (props) => {
             <img
               className="max-w-full rounded-lg"
               src={props.storyPicture}
+             
             />
           </div>
         </div>
@@ -101,7 +102,7 @@ const CardSosmed = (props) => {
             type="text"
             placeholder="Write a comment"
           />
-          <button className="btn bg-primary rounded-full py-2 px-10 font-medium font-semi-bold text-white ">
+          <button className="btn bg-primary border-none hover:bg-[#F8863A] rounded-full py-2 px-10 font-medium font-semi-bold text-white ">
             Send
           </button>
         </div>
@@ -127,7 +128,7 @@ const CardSosmed = (props) => {
           </div>
 
           <button className="w-full">
-            <p className="py-3 px-4 w-full block bg-slate-100 text-center rounded-lg font-medium hover:bg-slate-200">
+            <p className="py-2 mt-2 px-4 w-full block bg-slate-100 text-center rounded-lg font-medium hover:bg-slate-200">
               Show more comments
             </p>
           </button>
